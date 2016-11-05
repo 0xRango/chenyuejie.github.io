@@ -58,7 +58,7 @@ title: 使用Docker无痛启用Let's Encrypt
       environment:
         - VIRTUAL_HOST=app.imag.ink,imag.ink #nginx-proxy的域名
         - LETSENCRYPT_HOST=app.imag.ink,imag.ink #证书对应的域名
-        - LETSENCRYPT_EMAIL=foo@bar.com #证书到期未更新的提醒邮件
+        - LETSENCRYPT_EMAIL=foo@bar.com #发送证书到期的提醒邮件地址
       volumes:
         - ./client:/usr/share/nginx/html:ro
     ...

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-05T16:14:51+08:00</updated><id>http://localhost:4000//</id><title type="html">技 术 迷 思</title><subtitle>design by buzzword</subtitle><entry><title type="html">Hello Again 的一点想法</title><link href="http://localhost:4000/about-hello-again/" rel="alternate" type="text/html" title="Hello Again 的一点想法" /><published>2016-11-02T00:00:00+08:00</published><updated>2016-11-02T00:00:00+08:00</updated><id>http://localhost:4000/about-hello-again</id><content type="html" xml:base="http://localhost:4000/about-hello-again/">&lt;p&gt;苹果于&lt;a href=&quot;https://www.apple.com/apple-events/october-2016/&quot;&gt;10月27号发布了新硬件&lt;/a&gt;, 主要是进一步瘦身, 只提供雷电3接口并且加了 touch bar 的 rMBP, 由于过高的价格(主要原因)导致吐槽声一片,包括我在内, 感觉购买的心晃动了, 一样的价格可以买 5K iMac, 有选择困难症了.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-05T16:22:20+08:00</updated><id>http://localhost:4000//</id><title type="html">技 术 迷 思</title><subtitle>design by buzzword</subtitle><entry><title type="html">Hello Again 的一点想法</title><link href="http://localhost:4000/about-hello-again/" rel="alternate" type="text/html" title="Hello Again 的一点想法" /><published>2016-11-02T00:00:00+08:00</published><updated>2016-11-02T00:00:00+08:00</updated><id>http://localhost:4000/about-hello-again</id><content type="html" xml:base="http://localhost:4000/about-hello-again/">&lt;p&gt;苹果于&lt;a href=&quot;https://www.apple.com/apple-events/october-2016/&quot;&gt;10月27号发布了新硬件&lt;/a&gt;, 主要是进一步瘦身, 只提供雷电3接口并且加了 touch bar 的 rMBP, 由于过高的价格(主要原因)导致吐槽声一片,包括我在内, 感觉购买的心晃动了, 一样的价格可以买 5K iMac, 有选择困难症了.&lt;/p&gt;
 
 &lt;p&gt;然而, 在这前一天, 微软发布了 surface stadio 和 surface dial, 惊艳的设计让人们暂时忘记了它更加疯狂的价格, 3000$起, 好像人们也没有过多评论这个价格, 感觉还是对得起这个设计的. 不禁让人想起微软越来越像苹果的想法.&lt;/p&gt;
 
@@ -68,7 +68,7 @@ client:
   environment:
     - VIRTUAL_HOST=app.imag.ink,imag.ink #nginx-proxy的域名
     - LETSENCRYPT_HOST=app.imag.ink,imag.ink #证书对应的域名
-    - LETSENCRYPT_EMAIL=foo@bar.com #证书到期未更新的提醒邮件
+    - LETSENCRYPT_EMAIL=foo@bar.com #发送证书到期的提醒邮件地址
   volumes:
     - ./client:/usr/share/nginx/html:ro
 ...
