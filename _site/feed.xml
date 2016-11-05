@@ -1,4 +1,99 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-05T10:56:01+08:00</updated><id>http://localhost:4000//</id><title type="html">Your Name</title><subtitle>Web Developer from Somewhere</subtitle><entry><title type="html">You’re up and running!</title><link href="http://localhost:4000/Hello-World/" rel="alternate" type="text/html" title="You're up and running!" /><published>2014-03-03T00:00:00+08:00</published><updated>2014-03-03T00:00:00+08:00</updated><id>http://localhost:4000/Hello-World</id><content type="html" xml:base="http://localhost:4000/Hello-World/">&lt;p&gt;Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-05T16:14:51+08:00</updated><id>http://localhost:4000//</id><title type="html">技 术 迷 思</title><subtitle>design by buzzword</subtitle><entry><title type="html">Hello Again 的一点想法</title><link href="http://localhost:4000/about-hello-again/" rel="alternate" type="text/html" title="Hello Again 的一点想法" /><published>2016-11-02T00:00:00+08:00</published><updated>2016-11-02T00:00:00+08:00</updated><id>http://localhost:4000/about-hello-again</id><content type="html" xml:base="http://localhost:4000/about-hello-again/">&lt;p&gt;苹果于&lt;a href=&quot;https://www.apple.com/apple-events/october-2016/&quot;&gt;10月27号发布了新硬件&lt;/a&gt;, 主要是进一步瘦身, 只提供雷电3接口并且加了 touch bar 的 rMBP, 由于过高的价格(主要原因)导致吐槽声一片,包括我在内, 感觉购买的心晃动了, 一样的价格可以买 5K iMac, 有选择困难症了.&lt;/p&gt;
+
+&lt;p&gt;然而, 在这前一天, 微软发布了 surface stadio 和 surface dial, 惊艳的设计让人们暂时忘记了它更加疯狂的价格, 3000$起, 好像人们也没有过多评论这个价格, 感觉还是对得起这个设计的. 不禁让人想起微软越来越像苹果的想法.&lt;/p&gt;
+
+&lt;p&gt;从苹果的一般线路上看, 发布一个新硬件基本限定了这个产品线未来&lt;strong&gt;三到四年内的发展空间&lt;/strong&gt;, 也就是说一般情况下三到四年内不会有大的变化了, 从这点上看, 苹果这次发布(升级)确实是令人失望的. &lt;a href=&quot;https://www.youtube.com/watch?v=gWoqwCGQIM0&quot;&gt;不考虑触屏&lt;/a&gt;, 屏幕主机不能分离等微软12年(同rMBP发布)就开始做的事情表示了苹果一直的孤傲, 当然也有产品线冲突的缘故(iPad Pro), 但假若微软的方向是对的, 苹果将被微软拉开6-7年时间, 而如果在一两年内市场证明了这个方向, 两家公司在这个领域的发展速度可不是同日而语了. 苹果这次没有拿出可以信服的&lt;strong&gt;未来设计元素&lt;/strong&gt;, 简直就是拱手把这么大的市场让给对手了.&lt;/p&gt;
+
+&lt;p&gt;还有被人喷的是 Phil这个死胖纸说的: &lt;a href=&quot;http://forums.macrumors.com/threads/apples-phil-schiller-we-dont-design-for-price-we-design-for-the-experience.2009951/&quot;&gt;We Don’t Design for Price, We Design for the Experience&lt;/a&gt;, 不提还好, 提了正好戳痛广大果粉的心, 广大果粉表示买一堆配件的体验真不错。&lt;/p&gt;
+
+&lt;p&gt;这些都是我没看到真机的呓语, 苹果最近的传统是宣传图看上去很一般, 看到真机大不一样, 希望这次继续.&lt;/p&gt;
+
+&lt;p&gt;Hello…show me the money again.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/think-dongle.png&quot; alt=&quot;Think Dongle&quot; /&gt;&lt;/p&gt;</content><summary type="html">苹果于10月27号发布了新硬件, 主要是进一步瘦身, 只提供雷电3接口并且加了 touch bar 的 rMBP, 由于过高的价格(主要原因)导致吐槽声一片,包括我在内, 感觉购买的心晃动了, 一样的价格可以买 5K iMac, 有选择困难症了.</summary></entry><entry><title type="html">使用Docker无痛启用Let’s Encrypt</title><link href="http://localhost:4000/docker-lets-encrypt/" rel="alternate" type="text/html" title="使用Docker无痛启用Let's Encrypt" /><published>2016-08-07T00:00:00+08:00</published><updated>2016-08-07T00:00:00+08:00</updated><id>http://localhost:4000/docker-lets-encrypt</id><content type="html" xml:base="http://localhost:4000/docker-lets-encrypt/">&lt;p&gt;最近搭了个服务器，部署了好几个服务，通过Docker容器&lt;a href=&quot;https://github.com/jwilder/nginx-proxy&quot;&gt;nginx-proxy&lt;/a&gt;自动实现了站点配置，非常舒服，就差最麻烦的 ssl 配置了。
+早就听说了免费的&lt;a href=&quot;https://letsencrypt.org&quot;&gt;Let’s Encrypt&lt;/a&gt;，之前也看过几篇教程，看起来还是挺复杂的，用了Docker之后变得不想在操作系统上直接安装软件了（好吧，拖延症），今天正好有空想起这件事，上网搜了下，果然有人搞定了用Docker实现Let’s Encrypt的配置，哈哈，那就上吧！&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://letsencrypt.org&quot;&gt;Let’s Encrypt&lt;/a&gt; 就不多介绍了，自己看吧，&lt;a href=&quot;https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion&quot;&gt;letsencrypt-nginx-proxy-companion&lt;/a&gt; 是用来自动创建，续约Let’s Encrypt证书的Nginx伴侣，用到另外一个Nginx伴侣 &lt;a href=&quot;jwilder/docker-gen&quot;&gt;docker-gen&lt;/a&gt;，和我目前的架构正好一致，只是再起个Container，然后启动其他应用的Container的时候加些参数&lt;/p&gt;
+
+&lt;p&gt;附上 docker-compose.xml&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;version: '2'
+services:
+  nginx:
+    image: nginx
+    network_mode: bridge
+    ports:
+      - &quot;80:80&quot;
+      - &quot;443:443&quot;
+    container_name: nginx
+    volumes:
+      - /etc/nginx/vhost.d
+      - /usr/share/nginx/html
+      - /tmp/nginx:/etc/nginx/conf.d
+      - ./certs:/etc/nginx/certs:ro
+  docker-gen:
+    image: jwilder/docker-gen
+    network_mode: bridge
+    container_name: docker-gen
+    depends_on:
+      - nginx
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - .:/etc/docker-gen/templates
+    volumes_from:
+      - nginx
+    command: -notify-sighup nginx -watch /etc/docker-gen/templates/nginx.tmpl /etc/nginx/conf.d/default.conf
+  nginx-letsencrypt:
+    image: jrcs/letsencrypt-nginx-proxy-companion
+    network_mode: bridge
+    volumes:
+      - ./certs:/etc/nginx/certs:rw
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    volumes_from:
+      - nginx
+    environment:
+      - NGINX_DOCKER_GEN_CONTAINER=docker-gen
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;应用 docker-compose 片段&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;...
+client:
+  image: nginx:alpine
+  container_name: client
+  network_mode: bridge
+  ports:
+    - &quot;127.0.0.1:8080:80&quot;
+  environment:
+    - VIRTUAL_HOST=app.imag.ink,imag.ink #nginx-proxy的域名
+    - LETSENCRYPT_HOST=app.imag.ink,imag.ink #证书对应的域名
+    - LETSENCRYPT_EMAIL=foo@bar.com #证书到期未更新的提醒邮件
+  volumes:
+    - ./client:/usr/share/nginx/html:ro
+...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;启动之后，稍等一会就可以用 https 访问了&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/docker-https.png&quot; alt=&quot;docker https&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Go Green, Yeah!&lt;/p&gt;
+
+&lt;p&gt;另外，好像起了这个Container之后，会自动把 http 重定向到 https 。 新加的域名有时候有问题，重启下Container就好了。&lt;/p&gt;
+
+&lt;p&gt;起个Container，稍微做点配置，就搞定 ssl，还免费！！还要什么收费证书服务啊？
+这个例子也另外一个方面说明的Docker的灵活强大，主要归功与 &lt;a href=&quot;https://github.com/jwilder/docker-gen&quot;&gt;docker-gen&lt;/a&gt; 的创新，Docker还会更多想象空间。。&lt;/p&gt;</content><summary type="html">最近搭了个服务器，部署了好几个服务，通过Docker容器nginx-proxy自动实现了站点配置，非常舒服，就差最麻烦的 ssl 配置了。
+早就听说了免费的Let’s Encrypt，之前也看过几篇教程，看起来还是挺复杂的，用了Docker之后变得不想在操作系统上直接安装软件了（好吧，拖延症），今天正好有空想起这件事，上网搜了下，果然有人搞定了用Docker实现Let’s Encrypt的配置，哈哈，那就上吧！</summary></entry><entry><title type="html">Spring Boot 减少 tomcat 线程开销</title><link href="http://localhost:4000/spring-boot-tomcat-theads/" rel="alternate" type="text/html" title="Spring Boot 减少 tomcat 线程开销" /><published>2016-06-01T00:00:00+08:00</published><updated>2016-06-01T00:00:00+08:00</updated><id>http://localhost:4000/spring-boot-tomcat-theads</id><content type="html" xml:base="http://localhost:4000/spring-boot-tomcat-theads/">&lt;p&gt;最近在我的电脑上(mba 11’)实验 spring cloud 相关的项目, 发现在起了几个 spring boot 的实例之后, 电脑风扇就开始狂转, 我只是起服务器, 没有做大量的计算啊? 后来 Debug 看到 Tomcat 竟然开启了4, 500个进程, 看来 spring boot 默认是为线上产品配置的. 把 tomcat 线程减小之后, 风扇就不那么转了, :smiley:&lt;/p&gt;
+
+&lt;p&gt;解决方法: application.yml 添加&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;server:
+  tomcat:
+    max-threads: 20
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;</content><summary type="html">最近在我的电脑上(mba 11’)实验 spring cloud 相关的项目, 发现在起了几个 spring boot 的实例之后, 电脑风扇就开始狂转, 我只是起服务器, 没有做大量的计算啊? 后来 Debug 看到 Tomcat 竟然开启了4, 500个进程, 看来 spring boot 默认是为线上产品配置的. 把 tomcat 线程减小之后, 风扇就不那么转了, :smiley:</summary></entry><entry><title type="html">You’re up and running!</title><link href="http://localhost:4000/Hello-World/" rel="alternate" type="text/html" title="You're up and running!" /><published>2014-03-03T00:00:00+08:00</published><updated>2014-03-03T00:00:00+08:00</updated><id>http://localhost:4000/Hello-World</id><content type="html" xml:base="http://localhost:4000/Hello-World/">&lt;p&gt;Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/images/config.png&quot; alt=&quot;_config.yml&quot; /&gt;&lt;/p&gt;
 
