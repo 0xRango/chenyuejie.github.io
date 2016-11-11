@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>微信小应用初体验 – 技 术 迷 思 – design by buzzword</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="最近练手做了个H5小应用, 产品构思设计加基本原型实现用了差不多一周时间, 前端 vuejs 2.0, 后端 spring boot, 开发起来还是很顺畅, 而且在微信浏览器里面跑起来也是刷刷的.
+
+" />
+    <meta property="og:description" content="最近练手做了个H5小应用, 产品构思设计加基本原型实现用了差不多一周时间, 前端 vuejs 2.0, 后端 spring boot, 开发起来还是很顺畅, 而且在微信浏览器里面跑起来也是刷刷的.
+
+" />
+    
+    <meta name="author" content="技 术 迷 思" />
+
+    
+    <meta property="og:title" content="微信小应用初体验" />
+    <meta property="twitter:title" content="微信小应用初体验" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="技 术 迷 思 - design by buzzword" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/images/walkingascii.gif" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">技 术 迷 思</a></h1>
+            <p class="site-description">design by buzzword</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>微信小应用初体验</h1>
+
+  <div class="entry">
+    <p>最近练手做了个H5小应用, 产品构思设计加基本原型实现用了差不多一周时间, 前端 vuejs 2.0, 后端 spring boot, 开发起来还是很顺畅, 而且在微信浏览器里面跑起来也是刷刷的.</p>
+
+<p>前几天, 微信宣布了微信小应用的公测, 正好这个h5小应用也做得差不多了, 想把他迁移到微信小应用, 比较下两者到底有啥区别, 所以借了朋友的小店营业执照弄了个号, 开始吧. （这里顺便吐槽下微信生态对开发者是多么不友好）</p>
+
+<p>有之前H5代码的基础, 基本上就花了两天时间做出了个差不多的小应用版本(大约20个页面), 这其中还包括前前后后差不多半天时间在搞定API的访问. 由于小应用被限定只能访问后台配置的服务器列表, 这些服务器列表必须是 https 的域名, 无法设定为本地IP. 幸好有 <a href="https://ngrok.com/">ngrok</a>, 可以提供公网地址转发到本地地址, 找了个国内的服务器(ngrok现在固定名称的收费了, 有一些用之前开源版本搭建的服务, 自己搜索吧), 就可以测试起来了. 由于ngrok的域名是子域名, 一般服务器还没有做到泛域名证书, 因此在本地测试的时候, 需要把证书添加到信任列表, 但是在手机上测试就不行了(我没找到iOS上添加信任列表的方法), 在手机上测试就会出现API请求地址不受信任的错误, 没办法, 最后是在自己的vps再架设个nginx转发到ngrox, 这是想到的最快放解决方案了, 好在现在用<a href="/docker-lets-encrypt/">docker启用ssl</a>非常方便.</p>
+
+<p>整个开发过程基本没遇到什么问题, 熟悉前端开发的还是很容易上手的, 就是微信的开发文档不够友好, jsdoc都没有。</p>
+
+<p>关于小应用优缺点的讨论网络上已经非常多了，这里不多赘述, 我用下来最大的感受是</p>
+<ul>
+  <li>程序主体应该还是webview，只是微信做了大量定制优化，限定了组件类型，同时大部分的css都能用（小心selector的不同，具体见文档），这点和 react native还是有很大区别的（未考证）</li>
+  <li>如果主体是WebView, 小应用就是类是于cordova的hybrid架构, 只是微信帮你完成了cordova封装的工作，你不用再自己封装发包了，在微信里面自动完成，很好奇为什么phonegap没有考虑到这点…</li>
+  <li>只有一个宿主, 不用烦兼容性的问题</li>
+  <li>组件支持很多触摸事件，大大简化了的手势操作的开发，同时原生支持下拉 上拉等常见的事件, 简化了开发, 这点微信团队倒是很体贴</li>
+  <li>提供了一些原生组件比如日历选择器等，但是没看到可以自由扩展组件的地方, 只提供了个鸡肋的模板功能</li>
+  <li>集成了微信开放接口</li>
+</ul>
+
+<p>总之, 微信小应用是极大简化了移动app开发的平台, 现在还不是很完善, 相信未来会更美好. 至于性能, 我测试下来倒是没什么感觉, 抛去首次加载的延迟, h5应用现在也跑的非常快了, 而PWA等框架会逐步解决这些问题，但是上面提到的小应用的平台优势是无法取代的, 尽管这是个封闭的平台。</p>
+
+<p>最后, 随便再次吐槽一下臭名昭著的<a href="https://thx.github.io/mobile/300ms-click-delay">300ms点击延迟问题</a>，H5遭人诟病体验差他占了绝大部分功劳，如果没有这个问题, 一般的应用性APP在现在的设备上基本和原生差别不大了. 这个问题苹果引入它已经快10年了, 至今还没有通用的解决方案, 只能依赖一些第三方的库(我用的是<a href="https://github.com/ftlabs/fastclick">FastClick</a>).</p>
+
+  </div>
+
+  <div class="date">
+    Written on November 11, 2016
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:chenyuejie@gmail.com"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/chenyuejie"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
