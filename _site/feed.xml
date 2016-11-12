@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-11T20:34:20+08:00</updated><id>http://localhost:4000//</id><title type="html">技 术 迷 思</title><subtitle>design by buzzword</subtitle><entry><title type="html">微信小应用初体验</title><link href="http://localhost:4000/wechat-mini-app/" rel="alternate" type="text/html" title="微信小应用初体验" /><published>2016-11-11T00:00:00+08:00</published><updated>2016-11-11T00:00:00+08:00</updated><id>http://localhost:4000/wechat-mini-app</id><content type="html" xml:base="http://localhost:4000/wechat-mini-app/">&lt;p&gt;最近练手做了个H5小应用, 产品构思设计加基本原型实现用了差不多一周时间, 前端 vuejs 2.0, 后端 spring boot, 开发起来还是很顺畅, 而且在微信浏览器里面跑起来也是刷刷的.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-12T11:26:40+08:00</updated><id>http://localhost:4000//</id><title type="html">技 术 迷 思</title><subtitle>design by buzzword</subtitle><entry><title type="html">微信小应用初体验</title><link href="http://localhost:4000/wechat-mini-app/" rel="alternate" type="text/html" title="微信小应用初体验" /><published>2016-11-11T00:00:00+08:00</published><updated>2016-11-11T00:00:00+08:00</updated><id>http://localhost:4000/wechat-mini-app</id><content type="html" xml:base="http://localhost:4000/wechat-mini-app/">&lt;p&gt;最近练手做了个H5小应用, 产品构思设计加基本原型实现用了差不多一周时间, 前端 vuejs 2.0, 后端 spring boot, 开发起来还是很顺畅, 而且在微信浏览器里面跑起来也是刷刷的.&lt;/p&gt;
 
 &lt;p&gt;前几天, 微信宣布了微信小应用的公测, 正好这个h5小应用也做得差不多了, 想把他迁移到微信小应用, 比较下两者到底有啥区别, 所以借了朋友的小店营业执照弄了个号, 开始吧. （这里顺便吐槽下微信生态对开发者是多么不友好）&lt;/p&gt;
 
@@ -7,6 +7,7 @@
 &lt;p&gt;整个开发过程基本没遇到什么问题, 熟悉前端开发的还是很容易上手的, 就是微信的开发文档不够友好, jsdoc都没有。&lt;/p&gt;
 
 &lt;p&gt;关于小应用优缺点的讨论网络上已经非常多了，这里不多赘述, 我用下来最大的感受是&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;程序主体应该还是webview，只是微信做了大量定制优化，限定了组件类型，同时大部分的css都能用（小心selector的不同，具体见文档），这点和 react native还是有很大区别的（未考证）&lt;/li&gt;
   &lt;li&gt;如果主体是WebView, 小应用就是类是于cordova的hybrid架构, 只是微信帮你完成了cordova封装的工作，你不用再自己封装发包了，在微信里面自动完成，很好奇为什么phonegap没有考虑到这点…&lt;/li&gt;
