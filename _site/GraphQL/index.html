@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GraphQL 很好，但是不够优雅 – 技 术 迷 思 – design by buzzword</title>
+
+        <meta charset="utf-8" />
+    <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
+
+    
+    <meta name="description" content="GraphQL，一个冉冉升起的一个Buzzword，FB刚宣布了它 production ready，Github也宣布了其GraphQL API，而且也已经有了一大堆用户，漂亮，简直有取代REST API的地位趋势。
+
+" />
+    <meta property="og:description" content="GraphQL，一个冉冉升起的一个Buzzword，FB刚宣布了它 production ready，Github也宣布了其GraphQL API，而且也已经有了一大堆用户，漂亮，简直有取代REST API的地位趋势。
+
+" />
+    
+    <meta name="author" content="技 术 迷 思" />
+
+    
+    <meta property="og:title" content="GraphQL 很好，但是不够优雅" />
+    <meta property="twitter:title" content="GraphQL 很好，但是不够优雅" />
+    
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css" />
+    <link rel="alternate" type="application/rss+xml" title="技 术 迷 思 - design by buzzword" href="/feed.xml" />
+
+    <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
+  </head>
+
+  <body>
+    <div class="wrapper-masthead">
+      <div class="container">
+        <header class="masthead clearfix">
+          <a href="/" class="site-avatar"><img src="/images/walkingascii.gif" /></a>
+
+          <div class="site-info">
+            <h1 class="site-name"><a href="/">技 术 迷 思</a></h1>
+            <p class="site-description">design by buzzword</p>
+          </div>
+
+          <nav>
+            <a href="/">Blog</a>
+            <a href="/about">About</a>
+          </nav>
+        </header>
+      </div>
+    </div>
+
+    <div id="main" role="main" class="container">
+      <article class="post">
+  <h1>GraphQL 很好，但是不够优雅</h1>
+
+  <div class="entry">
+    <p>GraphQL，一个冉冉升起的一个Buzzword，<a href="http://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&amp;mid=2649827506&amp;idx=1&amp;sn=7eb23c6b15806382d6fdca5729bd7916&amp;chksm=8704aaaeb07323b86b5bbd2f855cf1b3ccaef0e3d4fde8f6c7aebd5e4da9f9ceb3edb8ff542c&amp;scene=0#wechat_redirect">FB刚宣布了它 production ready，Github也宣布了其GraphQL API</a>，而且也已经有了<a href="http://graphql.org/users/">一大堆用户</a>，漂亮，简直有取代REST API的地位趋势。</p>
+
+<p>初听到GraphQL，第一反应是FB之前的Social Graph API，现在已经基本没什么印象了，只是当时觉得图这个数据类型好高大上，比关系型数据库要高级好多倍，但后来好像也淹没在移动互联网大潮中，不知道现在还在不在，反正我也不能理解，就不去考究了。</p>
+
+<p>但是这个GraphQL不是社交网络时代的遗留产物，是为适应移动互联网快速发展趋势而生的。<strong>GraphQL是种API查询语言</strong>，支持GraphQL的服务器可以说是<strong>后端API的一层网关</strong>，解决的是REST架构无法应对现代应用开发后端API变化多端的需求：</p>
+<ul>
+  <li>REST API 是粗粒度的</li>
+  <li>REST 是分散的资源，一个需求需要查询多个资源</li>
+</ul>
+
+<p>这些问题其实不是REST的缺陷，而正是对于网络系统的精心设计（具体可以参考REST论文），我对于这样的设计没有反感，但它确实对于现代的应用开发造成一点困扰，一不小心就造成API的爆炸。现代应用是多端并行发展的，每个客户端对API都有不同的需求，不管是在功能上还是性能上，因此，现在有人提出 <a href="http://samnewman.io/patterns/architectural/bff/">BFF</a> 的概念，专门用一个模块来应对一种客户端的API需求，防止变化多端的API需求腐化核心业务领域。</p>
+
+<p>GraphQL正是通过一套查询语言， 实现对后端API的统一访问，你通过一次查询就可以实现多数据源聚合，字段级别的过滤。为了实现这个，你只需要：</p>
+<ol>
+  <li>GraphQL 服务器（基本主流的语言都有了，但如果只是个网关，需要开发这么多种服务器吗？）</li>
+  <li>在Server定义schema，定义字段类型及其数据获取方式
+    <ol>
+      <li>各种语言的Server定义方式可能不同，看具体API</li>
+      <li>数据获取可以通过Server语言直接实现，或者调用 REST 服务</li>
+    </ol>
+  </li>
+  <li>客户端使用查询语言进行交互，查询语言结构类似JSON</li>
+</ol>
+
+<p>看起来，只要做很小的变动就可以让我们的架构支持GraphQL，轻松实现BFF，干的漂亮，但是我却没有一点使用它的冲动，为什么呢：</p>
+<ol>
+  <li>如果GraphQL定位为API网关，这个网关最好是透明的，用户不需要在上面做任何设置，schema也许对于编辑器什么的有帮助，但是最好还是对于用户省去这一步。没有人愿意写了个服务还要去另外一个地方配置一堆东西，而且现了问题，还需要去网关定位出错的后端服务在哪。（关于配置，如果反过来，让服务主动到网关注册会好点，我没深入研究GraphQL是否支持这样）</li>
+  <li>逻辑不可能放在网关，所以网关你也不要提供逻辑能力，否则就是大泥球的陷阱。</li>
+  <li>查询语言类型JSON，什么鬼？虽然js现在很强势，但是你要我用数据结构去理解语意？😱</li>
+</ol>
+
+<p>而且，从FB的一些视频看，没有免费的午餐，要愉快的使用GraphQL，你必须</p>
+
+<p><img src="/images/think-in-graph.png" alt="docker https" /></p>
+
+<p>😱😱 好吧，智商不够用，这点无法做到，投降🏳️，我还是继续使用REST这种简单的资源，表述模式。</p>
+
+<p>奥卡姆剃刀定律告诉我们一切问题都有一个最优雅的解决方案，在我看来GraphQL现在还不是解决REST问题的最好方法。之前在知乎上看到有人调侃说：“某种程度上说，所谓的“面向对象”其实是解决了“聪明的码农不多”这个问题。。。而这也是FP唯一无法解决的问题。。。” 
+[<a href="https://www.zhihu.com/question/19732025/answer/32351764">0</a>]，也许GraphQL像fp一样有一天会呈现出他的强大威力，但是目前来说还是做个吃瓜观众的好，好好用好 REST。</p>
+
+<p>以上是我在没有动GraphQL一行代码的臆测，希望有一天能够动手使用GraphQL。</p>
+
+<p>最后，打个广告，关于REST这个问题之前我也探索过，搞过一个小程序，实现类似用 SQL 的方式， 并行查询，聚合，过滤 REST 服务，可以把它当作API网关，只要你知道后端有哪些 API，就可以透过它来查询。这是个实验项目，肯定也不是最优雅的解决方案，有兴趣的朋友可以移步 <a href="https://github.com/chenyuejie/rql-java">RQL</a>。</p>
+
+  </div>
+
+  <div class="date">
+    Written on November 20, 2016
+  </div>
+
+  
+</article>
+
+    </div>
+
+    <div class="wrapper-footer">
+      <div class="container">
+        <footer class="footer">
+          
+<a href="mailto:chenyuejie@gmail.com"><i class="svg-icon email"></i></a>
+
+
+<a href="https://github.com/chenyuejie"><i class="svg-icon github"></i></a>
+
+
+
+<a href="/feed.xml"><i class="svg-icon rss"></i></a>
+
+
+
+
+        </footer>
+      </div>
+    </div>
+
+    
+
+  </body>
+</html>
