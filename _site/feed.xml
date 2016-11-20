@@ -1,8 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-20T15:41:28+08:00</updated><id>http://localhost:4000//</id><title type="html">技 术 迷 思</title><subtitle>design by buzzword</subtitle><entry><title type="html">GraphQL 很好，但是不够优雅</title><link href="http://localhost:4000/GraphQL/" rel="alternate" type="text/html" title="GraphQL 很好，但是不够优雅" /><published>2016-11-20T00:00:00+08:00</published><updated>2016-11-20T00:00:00+08:00</updated><id>http://localhost:4000/GraphQL</id><content type="html" xml:base="http://localhost:4000/GraphQL/">&lt;p&gt;GraphQL，一个冉冉升起的一个Buzzword，&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&amp;amp;mid=2649827506&amp;amp;idx=1&amp;amp;sn=7eb23c6b15806382d6fdca5729bd7916&amp;amp;chksm=8704aaaeb07323b86b5bbd2f855cf1b3ccaef0e3d4fde8f6c7aebd5e4da9f9ceb3edb8ff542c&amp;amp;scene=0#wechat_redirect&quot;&gt;FB刚宣布了它 production ready，Github也宣布了其GraphQL API&lt;/a&gt;，而且也已经有了&lt;a href=&quot;http://graphql.org/users/&quot;&gt;一大堆用户&lt;/a&gt;，漂亮，简直有取代REST API的地位趋势。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://localhost:4000/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.3.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2016-11-20T16:42:37+08:00</updated><id>http://localhost:4000//</id><title type="html">技 术 迷 思</title><subtitle>design by buzzword</subtitle><entry><title type="html">GraphQL 很好，但是不够优雅</title><link href="http://localhost:4000/GraphQL/" rel="alternate" type="text/html" title="GraphQL 很好，但是不够优雅" /><published>2016-11-20T00:00:00+08:00</published><updated>2016-11-20T00:00:00+08:00</updated><id>http://localhost:4000/GraphQL</id><content type="html" xml:base="http://localhost:4000/GraphQL/">&lt;p&gt;GraphQL，一个冉冉升起的一个Buzzword，&lt;a href=&quot;http://mp.weixin.qq.com/s?__biz=MzA3NDM0ODQwMw==&amp;amp;mid=2649827506&amp;amp;idx=1&amp;amp;sn=7eb23c6b15806382d6fdca5729bd7916&amp;amp;chksm=8704aaaeb07323b86b5bbd2f855cf1b3ccaef0e3d4fde8f6c7aebd5e4da9f9ceb3edb8ff542c&amp;amp;scene=0#wechat_redirect&quot;&gt;FB刚宣布了它 production ready，Github也宣布了其GraphQL API&lt;/a&gt;，而且也已经有了&lt;a href=&quot;http://graphql.org/users/&quot;&gt;一大堆用户&lt;/a&gt;，漂亮，简直有取代REST API的地位趋势。&lt;/p&gt;
 
 &lt;p&gt;初听到GraphQL，第一反应是FB之前的Social Graph API，现在已经基本没什么印象了，只是当时觉得图这个数据类型好高大上，比关系型数据库要高级好多倍，但后来好像也淹没在移动互联网大潮中，不知道现在还在不在，反正我也不能理解，就不去考究了。&lt;/p&gt;
 
 &lt;p&gt;但是这个GraphQL不是社交网络时代的遗留产物，是为适应移动互联网快速发展趋势而生的。&lt;strong&gt;GraphQL是种API查询语言&lt;/strong&gt;，支持GraphQL的服务器可以说是&lt;strong&gt;后端API的一层网关&lt;/strong&gt;，解决的是REST架构无法应对现代应用开发后端API变化多端的需求：&lt;/p&gt;
+
 &lt;ul&gt;
   &lt;li&gt;REST API 是粗粒度的&lt;/li&gt;
   &lt;li&gt;REST 是分散的资源，一个需求需要查询多个资源&lt;/li&gt;
@@ -11,6 +12,7 @@
 &lt;p&gt;这些问题其实不是REST的缺陷，而正是对于网络系统的精心设计（具体可以参考REST论文），我对于这样的设计没有反感，但它确实对于现代的应用开发造成一点困扰，一不小心就造成API的爆炸。现代应用是多端并行发展的，每个客户端对API都有不同的需求，不管是在功能上还是性能上，因此，现在有人提出 &lt;a href=&quot;http://samnewman.io/patterns/architectural/bff/&quot;&gt;BFF&lt;/a&gt; 的概念，专门用一个模块来应对一种客户端的API需求，防止变化多端的API需求腐化核心业务领域。&lt;/p&gt;
 
 &lt;p&gt;GraphQL正是通过一套查询语言， 实现对后端API的统一访问，你通过一次查询就可以实现多数据源聚合，字段级别的过滤。为了实现这个，你只需要：&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;GraphQL 服务器（基本主流的语言都有了，但如果只是个网关，需要开发这么多种服务器吗？）&lt;/li&gt;
   &lt;li&gt;在Server定义schema，定义字段类型及其数据获取方式
@@ -23,6 +25,7 @@
 &lt;/ol&gt;
 
 &lt;p&gt;看起来，只要做很小的变动就可以让我们的架构支持GraphQL，轻松实现BFF，干的漂亮，但是我却没有一点使用它的冲动，为什么呢：&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;如果GraphQL定位为API网关，这个网关最好是透明的，用户不需要在上面做任何设置，schema也许对于编辑器什么的有帮助，但是最好还是对于用户省去这一步。没有人愿意写了个服务还要去另外一个地方配置一堆东西，而且现了问题，还需要去网关定位出错的后端服务在哪。（关于配置，如果反过来，让服务主动到网关注册会好点，我没深入研究GraphQL是否支持这样）&lt;/li&gt;
   &lt;li&gt;逻辑不可能放在网关，所以网关你也不要提供逻辑能力，否则就是大泥球的陷阱。&lt;/li&gt;
